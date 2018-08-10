@@ -1,0 +1,6 @@
+
+
+<app-input [quote]='quote'></app-input>
+<ul *ngFor='let quote of quotes'>
+  <li><u><h2><b>{{quote.name}}</b></h2></u>{{quote.quote}}</li>
+  <ul>
