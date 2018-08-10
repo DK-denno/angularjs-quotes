@@ -1,14 +1,15 @@
 <form #quote='ngForm' (ngsubmit)='submitform()'>
 
     <label for='name'><h2>Name</h2></label><br>
-      <input type="text" [(ngModel)]='quote.name' place holder="name" name="name"  required><br>
+      <input type="text" [(ngModel)]='freshQuote.name' place holder="name" name="name"  required><br>
 
 
   <label for='quote'><h2>Quote</h2></label><br>
-    <textarea type='text' placeholder='quote' name='quote' required></textarea><br>
+    <textarea type='text' placeholder='quote'[(ngModel)]='freshQuote.quote' name='quote' required></textarea><br>
 
+  
   <label for='date'><h2>Date</h2></label><br>
-    <input type="date" placeholder='date' name='quote' required><br>
+    <input type="date" placeholder='date' name='quote' [(ngModel)]='freshQuote.Date' required><br>
     <br>
 
     <button (click)='submitform()' >POST QUOTE</button>
