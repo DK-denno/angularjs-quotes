@@ -15,4 +15,5 @@ export class AppComponent {
     new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
     new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
   ];
+
 }
