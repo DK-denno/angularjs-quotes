@@ -1,6 +1,7 @@
 
 <ul *ngFor='let quote of quotes'>
   <li><u><h2><b>{{quote.name}}</b></h2></u>{{quote.quote}}</li>
-<button>Upvote</button>         <button>DownVote</button>
+<button (click)='like()'>Upvote</button>
+ <button (click)="dislike()">DownVote</button>
 </ul>
 <app-input (addquote)='addQuote($event)'></app-input>
