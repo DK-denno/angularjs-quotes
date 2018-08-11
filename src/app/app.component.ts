@@ -8,12 +8,5 @@ import { Quotes } from './quotes';
 })
 export class AppComponent {
   title = 'QUOTES';
-  quotes = [
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-  ];
 
 }
