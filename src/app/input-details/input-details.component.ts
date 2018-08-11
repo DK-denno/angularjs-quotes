@@ -8,17 +8,11 @@ import { Like } from '../like';
   styleUrls: ['./input-details.component.css']
 })
 export class InputDetailsComponent implements OnInit {
-  likes = [
-    new Like('1');
-  ];
 
   quotes = [
     new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
     new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
+
   ];
 
   addQuote(quote) {
@@ -27,6 +21,14 @@ export class InputDetailsComponent implements OnInit {
        this.quotes.push(quote);
 
   }
+
+  like() {
+    alert('You liked this quote');
+  }
+  dislike() {
+    alert('You disliked this quote this quote');
+  }
+
   constructor() { }
 
   ngOnInit() {
