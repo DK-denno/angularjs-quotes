@@ -20,6 +20,7 @@ export class InputComponent implements OnInit {
                 console.log('form submitted');
     }
 
+
     constructor() { }
 
   ngOnInit() {

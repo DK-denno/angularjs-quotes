@@ -1,8 +1,16 @@
-
-<ul *ngFor='let quote of quotes'>
+<div class="display">
+<ul *ngFor='let quote of quotes; let i = index'>
   <li><u><h2><b>{{quote.name}}</b></h2></u>{{quote.quote}}</li>
 <button (click)='like()'>Upvote</button>
+<br>
+<br>
 
  <button (click)="dislike()">DownVote</button>
+<br>
+<br>
+
+ <app-quote-details  [quote]='quote' (isComplete)= 'completequote($event,i)'></app-quote-details>
+
 </ul>
+</div>
 <app-input (addquote)='addQuote($event)'></app-input>
