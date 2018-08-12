@@ -1,0 +1,12 @@
+ <form #input='ngForm'>
+<div class="form-group">
+  <label for="name"><h2>Name</h2></label><br>
+    <input type="text" [(ngModel)]='input.name' name="name">
+
+  <label for="quote"><h2>Quote</h2></label><br>
+      <textarea type="text" name="quote"[(ngModel)]='input.quote' placeholder="Quote"></textarea>
+
+  <label for="date"><h2>Date</h2></label><br>
+      <input type="date" name="date" placeholder="dd/mm/yyyy" [(ngModel)]='input.date' ><br>
+
+  <button (click)="addquote()">Add quote</button>
