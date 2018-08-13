@@ -10,8 +10,8 @@ import { Quotes } from '../quotes';
 export class InputDetailsComponent implements OnInit {
 
     quotes = [
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
-    new Quotes(0, 'dennis', 'aiyayayayay', new Date() ),
+    new Quotes(0, 'dennis', 'aiyayayayay', new Date(), 0, 0 ),
+    new Quotes(0, 'dennis', 'aiyayayayay', new Date(), 0, 0 ),
 
   ];
 
@@ -24,7 +24,6 @@ export class InputDetailsComponent implements OnInit {
   completequote(isComplete, index) {
       if (isComplete) {
           const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`);
-
           if (toDelete) {
               this.quotes.splice(index, 1);
           }
@@ -32,12 +31,16 @@ export class InputDetailsComponent implements OnInit {
   }
 
 
-  like(){
-          alert('You liked this quote');
+  like(i) {
+      this.quotes[i].likes += 1;
+
+          console.log(this.quotes[i]);
 
   }
-  dislike() {
-    alert('You disliked this quote this quote');
+  dislike(i) {
+    this.quotes[i].dislikes += 1;
+
+        console.log(this.quotes[i]);
   }
 
   constructor() { }

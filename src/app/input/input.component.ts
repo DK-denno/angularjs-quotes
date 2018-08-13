@@ -12,7 +12,7 @@ export class InputComponent implements OnInit {
     @Input() quote: Quotes;
     @Output() addquote = new EventEmitter<Quotes>();
 
-    freshQuote = new Quotes(0, '', '', new Date() );
+    freshQuote = new Quotes(0, '', '', new Date() 0, 0 );
 
     submitform() {
                 this.addquote.emit(this.freshQuote);
