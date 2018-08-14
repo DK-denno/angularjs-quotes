@@ -1,21 +1,33 @@
-<div class="container">
+<div class="container" id="form">
 
 <form #quote='ngForm' (ngSubmit)='submitform()'>
 <div class="form-group">
-
+  <small class="alert alert-danger" [class.d-none]="quote.form.valid || quote.form.untouched">Form input doesn't meet the requirements.</small>
+<br>
+<br>
     <label for='name'><h2>Name</h2></label><br>
-      <input type="text" [(ngModel)]='this.freshQuote.name' place holder="name"  name="name"  required><br>
+      <input type="text" #name='ngModel'
+      [class.is-invalid]="name.invalid && name.touched"
+       [(ngModel)]='this.freshQuote.name' place holder="name"  name="name"  required><br><br>
+       <small id="warnings" class="alert alert-danger"  [class.d-none]="name.valid || name.untouched">Name is required</small>
   </div>
   <div class="form-group">
       <label for='quote'><h2>Quote</h2></label><br>
-        <textarea type='text' placeholder='quote' [(ngModel)]='this.freshQuote.quote' name='quote' required></textarea><br>
+        <textarea #textarea="ngModel" type='text' placeholder='quote'
+        [class.is-invalid]="textarea.invalid && textarea.touched"
+        [(ngModel)]='this.freshQuote.quote' name='quote' required></textarea><br><br>
+        <small  id="warnings" class="alert alert-danger"  [class.d-none]="textarea.valid || textarea.untouched">Quote is required</small>
+
   </div>
 
     <div class="form-group">
       <label for='date'><h2>Date</h2></label><br>
-        <input type="date"  placeholder='date' name='date' [(ngModel)]='this.freshQuote.date' required><br>
-    <br>
+        <input #date="ngModel" type="date"  placeholder='date' name='date'
+        [class.is-invalid]="date.invalid && date.touched"
+        [(ngModel)]='this.freshQuote.date' required><br><br>
+        <small id="warnings" class="alert alert-danger" [class.d-none]="date.valid || date.untouched">Date is required</small>
   </div>
-    <button id="submit" class="btn btn-primary" type='submit'>POST QUOTE</button>
+    <button id="submit" [disabled]="quote.form.invalid" class="btn btn-primary" type='submit'>POST QUOTE</button>
+
 </form>
 </div>

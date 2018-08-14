@@ -1,0 +1,19 @@
+.card{
+      transition: 0.3s;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 20px 28px 0;
+}
+.vote{
+  width:80px;
+   display:inline-block;
+}
+#list{
+  background-color: 	rgb(238,232,170)
+}
+#space{
+  padding:10px;
+}
